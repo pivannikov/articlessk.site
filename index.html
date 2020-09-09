@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Blog</title>
+</head>
+<body>
+    <div class="wrap">
+        <div class="head-line">
+            <div class="lenta-red"></div>
+            <div class="lenta-blue"></div>
+            <div class="lenta-black"></div>
+        </div>
+        <div class="container">
+
+            <div id="navbtn" class="header">
+                <div class="logo">
+                    <img src="img/WEB.png" alt="">
+                </div>
+                    <a href=""><div class="btn active-btn">About us</div></a>
+                    <a href=""><div class="btn">Articles</div></a>
+                    <a href=""><div class="btn">News</div></a>
+                    <a href=""><div class="btn">Contacts</div></a>
+                    <a href=""><div class="btn">Login</div></a>
+            </div>
+
+            <div  id="art" class="content">
+
+                <div class="articles">
+                    <div class="article" v-for="article in articles">
+                        <div class="article-info">
+                            <i><b>Author:</b> {{ article.author}} 
+                                <b>Date:</b> {{ article.date}}
+                            </i>
+                        </div>
+                        <a href=""><h2>{{ article.title }}</h2></a><br>
+                        <p>{{ article.text }}</p><br>
+                    </div>
+                </div>
+
+                <div class="side-bar">
+                    <div class="new" v-for="article in articles">
+                        <h3>{{ article.title }}</h3>
+                        <p><a href="#">{{ article.desc }}</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="foot-line">
+            <p>CopyRight @2020</p>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
